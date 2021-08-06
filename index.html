@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span,h1{
+
+        color:red;
+    }
+    table{
+            border-collapse : collapse;
+        }
+    th
+    {   font-family:monospace;
+        font-size: 20px;
+    }
+    td,th{
+        border: 2px solid darkslategrey;
+    }
+    td{
+        color: #a04f0d;
+        font-size: 19px;
+    }
+    h2
+    {
+        color:royalblue;
+    }
+    .intro
+    {
+            color: green;
+            font-weight: normal;
+    }
+    #sideheading
+    {
+        color :rgb(238, 74, 74);
+    }
+</style>
+<body>
+    <center><h1>SHADOWING:</h1></center>
+    <h2 class="intro">When a variable is declared in a certain scope having the same name defined on its outer scope and when we call the variable from the inner scope, the value assigned to the variable in the inner scope is the value that will be stored in the variable in the memory space. This is known as <span>Shadowing</span> or <span>Variable Shadowing</span>.</h2><h2 class="intro">In JavaScript, the introduction of let and const in ECMAScript 6 along with block scoping allows variable shadowing.</h2>
+    <h1>Example:</h1>
+    <h2>Hosting example too:</h2>
+    <h3>Outside the functions <span>before</span> declaration of variables:</h3>
+    <p id="outside-b4-declaration"></p>
+    <h3>Outside of all the functions <span>after</span> declaration of variables:</h3>
+    <p id="outsidefns-outsideblock-after-declaration"></p>
+    <h2>** Function1 - let,const,var variables declared inside and outside of a block of a function**</h2>
+    <h3>Before a block,inside a function <span>before</span> declaration of variables in the function:</h3>
+    <p id="insidefn1-b4-declaration"></p>
+    <h3>Before a block,inside a function <span>after</span> declaration of variables in the function:</h3>
+    <p id="insidefn1-after-declaration"></p>
+    <h3>Inside a block of a function <span>before</span> declaration of variables in the block:</h3>
+    <p id="insidefn1-insideblock-b4-declaration"></p>
+    <h3>Inside a block of a function <span>after</span> declaration of variables in the block:</h3>
+    <p id="insidefn1-insideblock-after-declaration"></p>
+    <h3>Outside of/After a block,but inside a function <span>after</span> declaration of variables:</h3>
+    <p id="outsidefn1-outsideblock-after-declaration"></p>
+
+    <h2>** Function2 - let,const,var variables declared inside of the block but not outside of the block of a function**</h2>
+    <h3>Before a block,inside a function[variables declared inside but not outside the block of a function]:</h3>
+    <p id="insidefn2-b4-block"></p>
+    <h3>Inside a block of a function <span>before</span> declaration of variables in the block:</h3>
+    <p id="insidefn2-insideblock-b4-decalaration"></p>
+    <h3>Inside a block of a function <span>after</span> declaration of variables in the block:</h3>
+    <p id="insidefn2-insideblock-after-declaration"></p>
+    <h3>Outside of/After a block,but inside a function[no variables declared outside the block of a function]:</h3>
+    <p id="outsidefn2-outsideblock-after-declaration"></p>
+    <center><h1>Hoisting and Dead Zone:</h1></center>
+    <h2 class="intro">An Execution Context (EC) always contains three parts — a variable environment, the scope chain in the current context, and this keyword. The code is basically scanned for variable declarations before it is executed. So this happens during the so-called creation phase of the execution context.Then for each variable that is found in the code, a new property is created in a variable environment object.This basically makes some types of variables accessible/usable in the code before they are actually declared in the code.This is called <span>Hosting</span>.</h2>
+    <table>
+        <tr><th></th><th>Hoisted</th><th>Initial Value</th><th>Scope</th></tr>
+        <tr><td>Function declaration</td><td>Yes</td><td>actual function</td><td>Block</td></tr>
+        <tr><td>Variables defined using var</td><td>Yes</td><td>undefined</td><td>Function</td></tr>
+        <tr><td>Variables defined using let/const</td><td>No</td><td>unitialized,TDZ</td><td>Block</td></tr>
+        <tr><td>Arrow function</td><td colspan='3'>Depends on the keyword used for declaration(let/const/var)</td></tr>
+    </table>
+    <h2 id="sideheading">Temporal Dead Zone: Let and Const:</h2>
+    <h2 class="intro">Basically the region of the scope in which the variable is defined, but can’t be used in any way. So it is as if the variable didn’t even exist. Now, if we still tried to access the variable while in the TDZ like we actually do in the first line of this if block, then we get a reference error telling us that we can’t access the job before initialization.</h2>
+    <script src="mainindex.js"></script>
+</body>
+</html>
